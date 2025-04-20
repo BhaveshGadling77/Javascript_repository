@@ -1,2 +1,2 @@
 # Javascript_repository
-coding in Javascript
+this is the repo in which i push code which i wrote while learning javascript from eloquent javascript and tutorial. 
