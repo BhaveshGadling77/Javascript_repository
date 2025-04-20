@@ -81,7 +81,60 @@ const reverseArrayInPlace = (arr) => {
     }
     return arr
 }
-console.log(reverseArrayInPlace(arr = [1, 2, 3, 4,5 , 6]));
+// console.log(reverseArrayInPlace(arr = [1, 2, 3, 4,5 , 6]));
 
+// /* 1 -> 2 -> 3 -> null
+//  Write a function arrayToList that builds up a list structure like the one
+// shown when given [1, 2, 3] as argument */
+//     function arrayToList(arr) {
+//         let list = null;
+//         for (let i = arr.length - 1; i >= 0; i--) {
+//             list = {
+//                 value: arr[i],
+//                 rest: list
+//             };
+//         }
+//         return list;
+//     }
 
+// console.log(list = arrayToList([1, 2, 3]))
+
+// /* do it reverse */
+// function listToArray(list) {
+//     let arr = []
+//     console.log(list)
+//     while(list){
+//         arr.push(list.value)
+//         list = list.rest   
+//     }
+
+//     return arr
+// }
+// console.log(listToArray(list = arrayToList([1, 2, 3])))
+
+// function prepond(num, list) {
+    
+// }
+// function nth(list, n) {
+//     if (!list) {
+//         return undefined
+//     } else if (0 == n)
+//         return list.value
+//     return nth(list.rest, n -1)
+
+// }
+// console.log(nth(3, list = arrayToList([1, 2, 3, 4, 5])));
+// console.log(list);
+
+function deepEqual(val1, val2) {
+    if (typeof val1 == typeof val2)
+        if (val1 == val2)
+        return "They are equal"
+        else 
+            return "They are not equal"
+    else 
+    return "They are not equal"
+}
+
+console.log(deepEqual(null, [1, 2, 4]));
 
