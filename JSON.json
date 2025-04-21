@@ -1,21 +1,8 @@
-const course = {
-    course : "Js in Hindi",
-    price : 999,
-    instructor: "Bhavesh"
-}
-// syntax for printing the object
-const {instructor: inst} = course // doing destructure the value
-console.log(instructor)
-
-
-// {
-//     "name":"bhavesh",
-//     "courseName" : "Js in Hindi",
-//     "price": "free"
-
-// }
 {
-    "results": [
+    "course" : "Js in Hindi",
+    "price" : 999,
+    "instructor": "Bhavesh",
+    "results" : [
       {
         "gender": "female",
         "name": {
@@ -72,12 +59,5 @@ console.log(instructor)
         },
         "nat": "US"
       }
-    ],
-    "info": {
-      "seed": "56d27f4a53bd5441",
-      "results": 1,
-      "page": 1,
-      "version": "1.4"
-    }
+    ]
   }
-  
