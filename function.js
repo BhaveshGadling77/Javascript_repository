@@ -48,27 +48,49 @@
 //     };
 // console.log(roundTo(4, 2))
 
-function findSolution(target) {
-    function find(current, history) {
-    if (current == target) {
-    return history;
-    } else if (current > target) {
-    return null;
-    } else {
-    return find(current + 5, `(${history} + 5)`) ??
-    find(current * 3, `(${history} * 3)`);
+// function findSolution(target) {
+//     function find(current, history) {
+//     if (current == target) {
+//     return history;
+//     } else if (current > target) {
+//     return null;
+//     } else {
+//     return find(current + 5, `(${history} + 5)`) ??
+//     find(current * 3, `(${history} * 3)`);
+//     }
+//     }
+//     return find(1, "1");
+// }
+// console.log(findSolution(15));
+// const current = 1
+// const history = "1"
+// console.log(current == history)
+
+// addtwo(2)
+// const addtwo = (x)  => {
+//     return x + 2
+// }
+// function repeat(n, action) {
+//     for (let i = 0; i < n; i++) {
+//     action(i);
+//     }
+//     }
+
+// function unless(test, then) {
+//     if (!test) then();
+//     }
+// repeat(3, n => {
+//     unless(n % 2 == 1, () => {
+//         console.log(n, "is even");
+// });
+// });
+function map(array, transform) {
+    let mapped = [];
+    for (let element of array) {
+    mapped.push(transform(element));
     }
+    return mapped;
     }
-    return find(1, "1");
-}
-console.log(findSolution(15));
-const current = 1
-const history = "1"
-console.log(current == history)
-
-addtwo(2)
-const addtwo = (x)  => {
-    return x + 2
-}
-
-
+    let rtlScripts = SCRIPTS.filter(s => s.direction == "rtl");
+    console.log(map(rtlScripts, s => s.name));
+    
