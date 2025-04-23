@@ -69,3 +69,19 @@ function countBy(items, groupName) {
 }
 countBy([1, 2, 3, 4, 5], n => n % 2 === 0 ? "even" : "odd");
 
+function speak(line) {
+    console.log(`The ${this.type} rabbit says '${line}'`);
+    }
+    let whiteRabbit = {type: "white", speak};
+    let hungryRabbit = {type: "hungry", speak};
+    whiteRabbit.speak("Oh my fur and whiskers");
+    // → The white rabbit says 'Oh my fur and whiskers'
+    hungryRabbit.speak("Got any carrots?");
+    // → The hungry rabbit says 'Got any carrots?'
+
+function Return(x, y) {
+    console.log(` summation of ${this.y} and ${x} is ${x + this.y}!`)
+}
+let object = {y: 5}
+// object.Return(5)
+Return.call(object, 9);
