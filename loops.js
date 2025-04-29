@@ -52,7 +52,7 @@ const myobj = {
 //for in loop is not work for the maps()
 
 //foreach loop
-let coding = ["js", "cpp", "python", "ruby", "java"]
+// let coding = ["js", "cpp", "python", "ruby", "java"]
 // coding.forEach( function(item) {
 //     console.log(item)
 // });
@@ -70,21 +70,70 @@ let coding = ["js", "cpp", "python", "ruby", "java"]
 //     console.log(item, index, arr)
 // })
 
-let myCoding = [
-    {
-        lang : "Javascript",
-        langFileName: "js"
-    },
-    {
-        lang : "Java",
-        langFileName : "java"
-    },
-    {
-        lang : "Python",
-        langFileName : "py"
-    },
+// let myCoding = [
+//     {
+//         lang : "Javascript",
+//         langFileName: "js"
+//     },
+//     {
+//         lang : "Java",
+//         langFileName : "java"
+//     },
+//     {
+//         lang : "Python",
+//         langFileName : "py"
+//     },
     
-]
-myCoding.forEach( (item) => {
-    console.log(item.langFileName)  
+// ]
+// myCoding.forEach( (item) => {
+//     console.log(item.langFileName)  
+// })
+
+// const coding = ["Javascript", "Java", "C", "C++", "Python"]
+// const values = coding.forEach( (item) => { 
+//     // console.log(item)  // foreach loop never return a values
+//     return item
+// })
+// console.log(values)
+
+// const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9,10]
+// let newnums = myNums.filter( (x) => (x >= 4)) // it accepts a function. 
+// console.log(newnums)
+// let newnums1 = myNums.filter( (x) =>  {
+//    return x >= 4
+// })
+
+// console.log(newnums1)
+
+//how to do this in for each
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const mynums = []
+// nums.forEach( (x) => {
+//     if (x >= 4)
+//         mynums.push(x)      
+// })
+// console.log(mynums)
+
+
+
+const books = [
+    { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+    { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+    { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+    { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+    { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+    { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+    { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+    { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+    { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+  ];
+
+let userbooks = books.filter( (bk) => {
+    return bk.genre === 'History'
+} )
+
+let userbooks1 = books.filter( (bk) => {
+      
+    return bk.publish > 1995 && bk.genre === "History"
 })
+console.log(userbooks1)
