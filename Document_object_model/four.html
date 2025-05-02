@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+body {
+    background-color: #212121;
+    color: white
+}
+</style>
+<body>
+    <ul class="language">
+     <li>
+        Javascript
+     </li>   
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+        }
+    addLanguage("python")
+    addLanguage("Ruby")
+    // function addLanguage(langName){
+    //     const li = document.createElement('li');
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector('.language').appendChild(li)
+    // }
+    function addOptiLang(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('GOlang')
+    //how to edit this values
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Java"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Java" // use this method only
+    secondLang.replaceWith(newLi)
+</script>
+</html>
