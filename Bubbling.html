@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Propagation Example</title>
+  <style>
+    #outer { padding: 30px; background: lightblue; }
+    #inner { padding: 20px; background: lightgreen; }
+    button { padding: 10px; }
+  </style>
+</head>
+<body>
+
+<div id="outer">
+  Outer Div
+  <div id="inner">
+    Inner Div
+    <button id="btn">Click Me</button>
+  </div>
+</div>
+
+<script>
+  const outer = document.getElementById('outer');
+  const inner = document.getElementById('inner');
+  const btn = document.getElementById('btn');
+
+  // Capturing phase listener on outer div
+  outer.addEventListener('click', () => {
+    console.log('Outer Div Capturing');
+  }, true); // true means capturing
+
+  // Bubbling phase listener on outer div
+  outer.addEventListener('click', () => {
+    console.log('Outer Div Bubbling');
+  }, false); // false means bubbling (default)
+
+  // Capturing phase listener on inner div
+  inner.addEventListener('click', () => {
+    console.log('Inner Div Capturing');
+  }, true);
+
+  // Bubbling phase listener on inner div
+  inner.addEventListener('click', () => {
+    console.log('Inner Div Bubbling');
+  }, false);
+
+  // Button click listener (target phase)
+  btn.addEventListener('click', (event) => {
+    console.log('Button Clicked');
+    // Uncomment to stop bubbling
+    // event.stopPropagation();
+  });
+</script>
+
+</body>
+</html>
