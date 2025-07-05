@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWait & Async</title>
+
+</head>
+<body>
+    <h1> Bhavesh Gadling</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayBhavesh =  function(){
+        console.log("Bhavesh")
+    };
+
+    const change_text = function () { 
+        document.querySelector('h1').innerHTML =     "Best Programmer";
+    }
+    const changeMe = setTimeout(change_text, 2000); // defination of function should be before the settimeout
+   // it is a method but it still calls a api this is not a core js part
+    //handler is callback function or reference of function 
+    //this function say like this give me sometime and i will excute the code after that time
+    document.querySelector('#stop ').addEventListener('click', () => {
+         clearTimeout(changeMe);
+         console.log("stop");
+   
+    });
+    
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: aliceblue;
+        height: 100vh;
+        width: 100vh;    
+    }
+
+    .card {
+        width: 400px;
+        margin: 0;
+        height: 300px;
+        background-color: #212133;
+        align-items: center;
+        border-radius: 30px;
+        margin-left: 50%;
+        justify-content: center;
+        text-align: center;
+
+    }
+</style> 
+<body>
+    <div class="card" id="details">
+
+    </div>
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if(xhr.readyState == 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data.followers);
+            let img = document.createElement('img')
+            let button = document.createElement('button')
+            button.style.width = '150px'
+            button.innerText = "Click here to get info"
+            button.style.height = '50px'
+            button.addEventListener('click', (e) => {
+                img.style.opacity = 1
+                text.style.opacity = 1
+            })
+            let div = document.querySelector("#details")
+            div.appendChild(button)
+            div.appendChild(document.createElement('br'))
+            img.setAttribute('src', (data.avatar_url))
+            img.setAttribute('alt', "Image of hitesh ")
+            img.style.height = '100px'
+            img.style.opacity = 0
+            let text = document.createElement('p')
+            text.innerText = "followers : " +data.followers
+            document.querySelector('#details').appendChild(img)
+            document.querySelector('#details').appendChild(text)
+            text.style.opacity = 0
+        }
+    }
+    xhr.send()
+//console.log is dev tool for browser 
+    console.log("HERE")
+</script>
+</html>
